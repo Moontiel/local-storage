@@ -1,0 +1,172 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*
+	body: toma reelevancia cuando trabajamos con el dark mode
+	ya que lo tomamos como referencia para realizar los cambios
+	en los diferentes elementos
+*/
+body {
+  background-color: #fff;
+  /*
+		js_dark_mode: clase añadida con javascript la cual
+		cambia el color de fondo del body
+	*/
+  /*
+		js_dark_mode: en este caso cuando el body tiene esta
+		clase vincula a la tag-section y le añade estilos por 
+		medio de javascript
+	*/
+  /*
+		js_dark_mode: en este caso cuando el body tiene esta
+		clase vincula a section_two y le añade estilos por 
+		medio de javascript
+	*/
+}
+
+body.js_dark_mode {
+  background-color: #333;
+}
+
+body.js_dark_mode section {
+  color: #fff;
+  background-color: #434343;
+}
+
+body.js_dark_mode .section_two {
+  color: #333;
+  background-color: #f1f4f7;
+}
+
+header {
+  background-color: #f1f4f7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 80px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /*
+		box_icons: es importante definirle un position: relative ya que
+		implementamos una pseudo clase donde definimos position:relative
+		haciendo uso de flexbox y sus propiedades justify-content y
+		align-items mas definiendo width y height alineamos los iconos
+		de manera horizontal y vertical
+	*/
+}
+
+header .box_logo {
+  background-color: #fff;
+  color: #333;
+  padding: 14px 50px;
+}
+
+header .box_icons {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 60px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  border-radius: 30px;
+  cursor: pointer;
+  /*
+			implementando la pseudo clase ::after creamos un circulo que
+			nos servira de interruptor al implementar el dark mode,
+			recordemos que la importancia de las propiedades content y 
+			display: block para que lo que creemos sea visible
+
+			luego implementamos un position: absolute con sus propiedades
+			top, left y right las cuales nos ayudan a posicionar el 
+			interruptor finalmente destacar que el hight debe ser el mismo
+			que el definido en box_icons
+		*/
+  /*
+			js_move_circle: cuando box_icons tiene la clase js_move_circle
+			añadida con javascript relaciona a la pseudo clase ::after
+			cambiado el valor de las propiedades right y left lo que permite 
+			que esta cambie la posicion generando el efecto interruptor
+		*/
+  /*
+			tag-svg
+		*/
+  /*
+			icon_sun: clase independiente del icono sol
+		*/
+  /*
+			icon_moon: clase independiente del icono luna
+		*/
+}
+
+header .box_icons:after {
+  content: '';
+  display: block;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: unset;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  -webkit-box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.2);
+}
+
+header .box_icons.js_move_circle:after {
+  top: 0;
+  left: unset;
+  right: 0;
+}
+
+header .box_icons svg {
+  width: 24px;
+  height: 24px;
+}
+
+header .box_icons .icon_sun {
+  fill: gold;
+}
+
+header .box_icons .icon_moon {
+  fill: skyblue;
+}
+
+main section {
+  width: 80%;
+  height: 120px;
+  margin: 20px auto;
+  padding: 20px;
+  color: #333;
+}
+
+main section h2 {
+  font-size: 26px;
+}
+
+main section p {
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+footer {
+  text-align: center;
+  background-color: #f1f4f7;
+  color: #333;
+  padding: 40px 0;
+}
+/*# sourceMappingURL=style.css.map */
