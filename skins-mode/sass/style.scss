@@ -1,0 +1,176 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*
+	body: es importante implementar el color que llevaran los textos
+	en el sitio web, directamente en este este elmemento ya que si no,
+	no hace el cambio de color cuando añadimos las clases con javascript
+*/
+body {
+	color: #5c5b5b;
+
+	/*
+		js_skin_dark: clase añadida con javascript la cual
+		añade un background-color al body y cambia el color
+		de los textos
+	*/
+	&.js_skin_dark {
+		background-color: #333;
+		color: #fff;
+	}
+
+	/*
+		cuando body tiene la clase js_skin_dark podemos relacionar
+		una tag y cambiarle el background-color
+	*/
+	&.js_skin_dark section {
+		background-color: #403b39;
+	}
+
+	/*
+		cuando body tiene la clase js_skin_dark podemos relacionar
+		una tag y cambiarle el background-color
+	*/
+	&.js_skin_dark header {
+		background-color: #403940;
+	}
+
+	/*
+		cuando body tiene la clase js_skin_dark podemos relacionar
+		una tag y cambiarle el background-color
+	*/
+	&.js_skin_dark footer {
+		background-color: #403940;
+	}
+
+	/*
+		js_skin_light: aplica de la misma manera antes documentada
+	*/
+	&.js_skin_light {
+		background-color: #fff;
+	}
+
+	/*
+		js_skin_skyblue: aplica de la misma manera antes documentada
+	*/
+	&.js_skin_skyblue {
+		background-color: #87ceeb;
+		color: #fff;
+	}
+
+	&.js_skin_skyblue section {
+		background-color: #8096f6;
+	}
+
+	&.js_skin_skyblue header {
+		background-color: #6e9cd4;
+	}
+
+	&.js_skin_skyblue footer {
+		background-color: #6e9cd4;
+	}
+}
+
+header,
+footer {
+	text-align: center;
+	height: 90px;
+}
+
+/*
+	flexbox_skins: definimos position: fixed y sus propiedades
+	top, right y z-index para posicionar este contenedor en el
+	viewport, flexbox con sus propiedades justify-content y 
+	align-items mas las propiedades width y height nos permiten
+	centrar los elementos que este contiene de manera vertical y 
+	horizontal
+*/
+.flexbox_skins {
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 2;
+	display: flex;
+	width: 40px;
+	justify-content: center;
+	height: 100%;
+	align-items: center;
+
+	/*
+		box_skins
+	*/
+	.box_skins {
+		width: 30px;
+
+		/*
+			tag-span: definimos display: block que junto a width,
+			height y box-shadow hacen el visible el contenido
+			de la tag-span
+		*/
+		span {
+			display: block;
+			width: 20px;
+			height: 20px;
+			border-radius: 100%;
+			/* border: 1px solid #ccc; */
+			margin: 0 auto;
+			box-shadow: 0 1px 5px 0 #5c5b5b;
+			cursor: pointer;
+			transition: transform 0.2s;
+
+			/*
+				cuando hacemos :hover sobre la tag-span, añadimos un
+				transform: scale para reducir el tamaño de la tag-span
+			*/
+			&:hover {
+				transform: scale(0.8);
+			}
+		}
+
+		/*
+			skin_dark: a la tag-span que tiene esta clase le añadimos
+			un background-color
+		*/
+		.skin_dark {
+			background-color: #333;
+		}
+
+		/*
+			skin_dark: a la tag-span que tiene esta clase le añadimos
+			un background-color
+		*/
+		.skin_light {
+			background-color: #fff;
+			margin: 8px auto;
+		}
+
+		/*
+			skin_dark: a la tag-span que tiene esta clase le añadimos
+			un background-color
+		*/
+		.skin_skyblue {
+			background-color: skyblue;
+		}
+	}
+}
+
+/*
+	seccion de ejemplo
+*/
+section {
+	width: 600px;
+	margin: 50px auto;
+	padding: 20px;
+
+	h2 {
+		font-size: 30px;
+		margin-bottom: 12px;
+	}
+
+	p {
+		line-height: 1.5;
+	}
+}
